@@ -21,7 +21,7 @@ app = FastAPI(title="FacturaAI", lifespan=lifespan)
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173"],
+    allow_origins=[o.strip() for o in settings.ALLOWED_ORIGINS.split(",")],
     allow_credentials=False,
     allow_methods=["*"],
     allow_headers=["*"],
