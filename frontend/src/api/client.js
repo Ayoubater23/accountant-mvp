@@ -72,3 +72,7 @@ export function setStoredUser(user) {
 export function clearStoredUser() {
   localStorage.removeItem(USER_KEY);
 }
+
+const client = axios.create({
+  baseURL: import.meta.env.VITE_API_URL || "http://localhost:8000"
+})
