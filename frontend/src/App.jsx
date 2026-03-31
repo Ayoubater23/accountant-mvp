@@ -5,6 +5,7 @@ import Login from "./pages/Login.jsx";
 import Register from "./pages/Register.jsx";
 import Dashboard from "./pages/Dashboard.jsx";
 import Upload from "./pages/Upload.jsx";
+import Verify from "./pages/Verify.jsx";
 
 function ProtectedRoute({ children }) {
   const { token } = useAuth();
@@ -73,6 +74,7 @@ export default function App() {
               </ProtectedRoute>
             }
           />
+          <Route path="/verify" element={<Verify />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </main>
