@@ -26,6 +26,16 @@ const SECTIONS = [
     ],
   },
   {
+    title: "Informations Fiscales Marocaines",
+    rows: [
+      { key: "ice", label: "ICE" },
+      { key: "if_number", label: "Identifiant Fiscal (IF)" },
+      { key: "rc", label: "Registre de Commerce (RC)" },
+      { key: "cnss", label: "CNSS" },
+      { key: "patente", label: "Taxe Professionnelle (Patente)" },
+    ],
+  },
+  {
     title: "Montants",
     rows: [
       { key: "total_ht", label: "Total HT" },

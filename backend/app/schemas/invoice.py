@@ -29,6 +29,13 @@ class ExtractionData(BaseModel):
     currency: str | None = None
     discount: str | None = None
 
+    # Moroccan fiscal identifiers
+    ice: str | None = None
+    if_number: str | None = None
+    rc: str | None = None
+    cnss: str | None = None
+    patente: str | None = None
+
 
 class InvoiceOut(BaseModel):
     id: str

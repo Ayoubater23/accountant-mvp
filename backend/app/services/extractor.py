@@ -25,6 +25,7 @@ Rules:
 - For currency: return ONLY the code or symbol (e.g. "EUR", "$"). No extra words.
 - If the same value appears twice (OCR duplicate), include it only once.
 - If a field is not found, return null.
+- Moroccan fiscal fields: "ice" = Identifiant Commun de l'Entreprise (15 digits), "if_number" = Identifiant Fiscal, "rc" = Registre de Commerce, "cnss" = Caisse Nationale de Sécurité Sociale number, "patente" = Taxe professionnelle number.
 
 Return this exact JSON structure:
 {{
@@ -44,7 +45,12 @@ Return this exact JSON structure:
   "tva_rate": "...",
   "total_ttc": "...",
   "currency": "...",
-  "discount": "..."
+  "discount": "...",
+  "ice": "...",
+  "if_number": "...",
+  "rc": "...",
+  "cnss": "...",
+  "patente": "..."
 }}
 
 Invoice text:
