@@ -63,7 +63,7 @@ def extract_invoice_data(raw_text: str) -> ExtractionData:
     response = client.chat.completions.create(
         model="openai/gpt-oss-120b",
         messages=[{"role": "user", "content": prompt}],
-        max_tokens=1024,
+        max_tokens=2048,
     )
 
     content = (response.choices[0].message.content or "").strip()
