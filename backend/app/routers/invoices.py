@@ -164,7 +164,9 @@ async def export_invoice_excel(
         raise HTTPException(status_code=404, detail="Invoice not found")
 
     xlsx_bytes = invoices_to_excel([invoice])
-    safe_name = invoice.filename.rsplit(".", 1)[0] + ".xlsx"
+    invoice_number = (invoice.data or {}).get("invoice_number") if invoice.data else None
+    base_name = invoice_number or invoice.filename.rsplit(".", 1)[0]
+    safe_name = base_name.replace("/", "-").replace("\\", "-") + ".xlsx"
 
     return Response(
         content=xlsx_bytes,
